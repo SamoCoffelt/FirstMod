@@ -12,11 +12,10 @@ public class RegistryHandler {
 
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, FirstMod.MOD_ID);
 
-    public static void init () {
+    public static void init() {
         ITEMS.register(FMLJavaModLoadingContext.get().getModEventBus());
     }
-
     //Items
-    public static final RegistryObject<Item> GREEN_SWORD = ITEMS.register("green_sword", ItemBase::new);
+    public static final RegistryObject<Item> GREEN_INGOT = ITEMS.register("green_ingot", ItemBase::new);
 
 }
