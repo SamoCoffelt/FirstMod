@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " yy",
+    " z ",
+    " z "
+  ],
+  "key":
+  {
+    "y":
+    {
+      "item": "samosfirst:green_ingot"
+    },
+    "z":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "samosfirst:green_hoe",
+    "count": 1
+  }
+}

@@ -1,7 +1,8 @@
-package com.samo.firstmod;
+package com.samo.samosfirst;
 
-
-import com.samo.firstmod.util.RegistryHandler;
+import com.samo.samosfirst.util.RegistryHandler;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -27,9 +28,19 @@ public class FirstMod
         RegistryHandler.init();
 
         MinecraftForge.EVENT_BUS.register(this);
+
     }
 
-    private void setup(final FMLCommonSetupEvent event) { }
+    private void setup(final FMLCommonSetupEvent event) {}
 
     private void doClientStuff(final FMLClientSetupEvent event) { }
+
+    public static final ItemGroup TAB = new ItemGroup("greenTab") {
+
+        @Override
+        public ItemStack createIcon() {
+            return new ItemStack(RegistryHandler.GREEN_INGOT.get());
+        }
+    };
 }
+

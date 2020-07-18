@@ -1,0 +1,20 @@
+{
+"type": "minecraft:crafting_shaped",
+"pattern":
+[
+"y y",
+"y y"
+],
+"key":
+{
+"y":
+{
+"item": "samosfirst:green_ingot"
+}
+},
+"result":
+{
+"item": "samosfirst:green_boots",
+"count": 1
+}
+}

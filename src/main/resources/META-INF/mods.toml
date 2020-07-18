@@ -1,3 +1,4 @@
+
 modLoader="javafml" #mandatory
 
 loaderVersion="[31,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
@@ -10,7 +11,7 @@ modId="samosfirst" #mandatory
 
 version="1.15.2-1.0.0" #mandatory
 
-displayName="First Mod" #mandatory
+displayName="Samo's First Mod!" #mandatory
 
 updateJSONURL="http://myurl.me/" #optional
 
@@ -18,15 +19,14 @@ displayURL="http://example.com/" #optional
 
 logoFile="examplemod.png" #optional
 
-credits="Thanks for making this Samo" #optional
+credits="Thanks for this example mod goes to Java" #optional
 
 authors="Samo925" #optional
 
 description='''
-This is Samo's first mod!
+Mod that is full of green!
 '''
-
-
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.examplemod]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
@@ -38,7 +38,7 @@ This is Samo's first mod!
     ordering="NONE"
     # Side this dependency is applied on - BOTH, CLIENT or SERVER
     side="BOTH"
-
+# Here's another dependency
 [[dependencies.examplemod]]
     modId="minecraft"
     mandatory=true

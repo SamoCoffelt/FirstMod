@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "  y",
+    " y ",
+    "y  "
+  ],
+  "key":
+  {
+    "y":
+    {
+      "item": "minecraft:bread"
+    }
+  },
+  "result":
+  {
+    "item": "samosfirst:baguette",
+    "count": 1
+  }
+}
