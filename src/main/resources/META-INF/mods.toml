@@ -11,15 +11,15 @@ modId="samosfirst" #mandatory
 
 version="1.15.2-1.0.0" #mandatory
 
-displayName="Samo's First Mod!" #mandatory
+displayName="Green Machine+" #mandatory
 
 updateJSONURL="http://myurl.me/" #optional
 
-displayURL="http://example.com/" #optional
+displayURL="https://twitch.tv/samo925/" #optional
 
-logoFile="examplemod.png" #optional
+logoFile="pfp.png" #optional
 
-credits="Thanks for this example mod goes to Java" #optional
+credits="Thanks to my twitch followers and supporters!" #optional
 
 authors="Samo925" #optional
 
