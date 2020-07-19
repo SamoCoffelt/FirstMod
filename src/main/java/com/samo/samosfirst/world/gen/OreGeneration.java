@@ -27,8 +27,8 @@ public class OreGeneration {
 
     public static void generateOre() {
         for (Biome biome : ForgeRegistries.BIOMES) {
-                ConfiguredPlacement customConfig = Placement.COUNT_RANGE.func_227446_a_(new CountRangeConfig(30, 3, 5, 15));
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.func_225566_b_(new OreFeatureConfig
+                ConfiguredPlacement customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(30, 3, 5, 15));
+                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig
                         (OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.GREEN_ORE.get().getDefaultState(), 8)));
             }
         }
