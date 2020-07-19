@@ -2,6 +2,7 @@ package com.samo.samosfirst.world.gen;
 
 import com.samo.samosfirst.FirstMod;
 import com.samo.samosfirst.util.RegistryHandler;
+import net.minecraft.block.BlockState;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage;
@@ -19,18 +20,27 @@ import net.minecraftforge.registries.ForgeRegistries;
 @Mod.EventBusSubscriber(modid = FirstMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class OreGeneration {
 
-    @SubscribeEvent
-    public static void loadCompleteEvent(FMLLoadCompleteEvent event)
-    {
-        OreGeneration.generateOre();
-    }
 
-    public static void generateOre() {
+
+    @SubscribeEvent
+    public static void generateOres(FMLLoadCompleteEvent event) {
         for (Biome biome : ForgeRegistries.BIOMES) {
-                ConfiguredPlacement customConfig = Placement.COUNT_RANGE.configure(new CountRangeConfig(30, 3, 5, 15));
-                biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(new OreFeatureConfig
-                        (OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.GREEN_ORE.get().getDefaultState(), 8)));
+
+            if (biome.getCategory() == Biome.Category.NETHER) {
+
+            } else if (biome.getCategory() == Biome.Category.THEEND) {
+
+            } else {
+                genOre(biome, 1, 3, 5, 17, OreFeatureConfig.FillerBlockType.NATURAL_STONE, RegistryHandler.GREEN_ORE.get().getDefaultState(), 8);
             }
         }
     }
+
+    private static void genOre(Biome biome, int count, int bottomOffset, int topOffset, int max, OreFeatureConfig.FillerBlockType filter, BlockState defaultBlockstate, int size) {
+        CountRangeConfig range = new CountRangeConfig(count, bottomOffset, topOffset, max);
+        OreFeatureConfig feature = new OreFeatureConfig(filter, defaultBlockstate, size);
+        ConfiguredPlacement config = Placement.COUNT_RANGE.configure(range);
+        biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, Feature.ORE.withConfiguration(feature).withPlacement(config));
+    }
+}
 
